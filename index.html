@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>WITCH.CODES - The ATHENA Framework</title>
+<meta name="description" content="ATHENA. A framework of instructions and prompts, 150 to 600 pages, that deconstructs and reconstructs how an LLM answers. Higher ceiling, higher floor, higher average. Audited.">
+<link rel="canonical" href="https://witch.codes/">
+<meta property="og:title" content="WITCH.CODES - The ATHENA Framework">
+<meta property="og:description" content="ATHENA. A framework of instructions and prompts, 150 to 600 pages, that deconstructs and reconstructs how an LLM answers. Higher ceiling, higher floor, higher average. Audited.">
+<meta property="og:url" content="https://witch.codes/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context":"https://***@type":"WebPage","name":"WITCH.CODES - The ATHENA Framework","url":"https://witch.codes/","description":"ATHENA. A framework of instructions and prompts, 150 to 600 pages, that deconstructs and reconstructs how an LLM answers. Higher ceiling, higher floor, higher average. Audited.","isPartOf":{"@type":"WebSite","name":"Witchcraft AI","url":"https://witchcraft.business/","publisher":{"@type":"Organization","name":"WITCHCRAFT AI","url":"https://pitch./"}}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":["ProfessionalService","LocalBusiness"],"name":"WITCH.CODES — ATHENA Framework","alternateName":"ATHENA Cognitive Framework","description":"ATHENA framework of instructions and prompts (150-600 pages) that deconstructs and reconstructs how an LLM answers — research before answering, divergent cognitive frames, adversarial review, external verification, effort scaled to stakes, persistent memory. Applied at inference time. Model-agnostic. No retraining. No weight changes. Sydney, Australia.","url":"https://witch.codes/","email":"hecate@witch.codes","priceRange":"$$$","areaServed":{"@type":"Country","name":"Australia"},"address":{"@type":"PostalAddress","addressCountry":"AU","addressRegion":"NSW","addressLocality":"Sydney"},"sameAs":["https://witchcraft.business/","https://witchcraft.expert/","https://pitch.black.industries/"],"hasOfferCatalog":{"@type":"OfferCatalog","name":"ATHENA Engagement Modes","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"ATHENA Framework License","description":"Full framework text (150-600 pages) for internal deployment. Model-agnostic. Includes invariants, reasoning architectures, verification loop, memory protocol."}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"ATHENA Audit & Implementation","description":"We wrap your model, run the audit suite, publish before/after benchmarks. Ceiling/floor/average measured."}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Operator Advisory Retainer","description":"Standing seat for owners who want the cognitive arbitrage before the market prices it. Diagnostics with numbers attached."}}]}}</script>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F4EEE3;
+  --paper-hi:#F8F3EA;
+  --paper-lo:#E4D9C6;
+  --ink:#26111A;
+  --ink-soft:#3E222C;
+  --wine:#721828;
+  --wine-hi:#8C1F2F;
+  --body:#544048;
+  --mute:#7A686E;
+  --dim:#9C8A8E;
+  --rule:#D6C9B4;
+  --rule-soft:#E2D7C4;
+  --disp:"Bodoni Moda","Didot","Helvetica Neue",Helvetica,Arial,serif;
+  --text:"Libre Baskerville",Georgia,"Times New Roman",serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{
+  background-color:var(--paper);
+  background-image:
+    radial-gradient(ellipse 120% 90% at 50% 32%, var(--paper-hi) 0%, var(--paper) 46%, var(--paper-lo) 100%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='64' viewBox='0 0 96 64'%3E%3Cdefs%3E%3Cpattern id='croc' width='96' height='64' patternUnits='userSpaceOnUse'%3E%3Crect x='6' y='6' width='36' height='22' rx='11' fill='none' stroke='%233E2E20' stroke-opacity='0.16' stroke-width='1'/%3E%3Crect x='54' y='6' width='36' height='22' rx='11' fill='none' stroke='%233E2E20' stroke-opacity='0.16' stroke-width='1'/%3E%3Crect x='-12' y='36' width='36' height='22' rx='11' fill='none' stroke='%233E2E20' stroke-opacity='0.16' stroke-width='1'/%3E%3Crect x='36' y='36' width='36' height='22' rx='11' fill='none' stroke='%233E2E20' stroke-opacity='0.16' stroke-width='1'/%3E%3Crect x='84' y='36' width='36' height='22' rx='11' fill='none' stroke='%233E2E20' stroke-opacity='0.16' stroke-width='1'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='96' height='64' fill='url(%23croc)'/%3E%3C/svg%3E");
+  background-blend-mode:normal,multiply;
+  background-attachment:fixed,fixed;
+  color:var(--ink);
+  font-family:var(--text);
+  font-size:16px;
+  line-height:1.85;
+  letter-spacing:.005em;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+#veil{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:.85}
+#veil+*{position:relative;z-index:1}
+a{color:inherit;text-decoration:none}
+a:focus-visible,button:focus-visible{outline:1px solid var(--wine);outline-offset:6px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap}
+.wrap{max-width:1240px;margin:0 auto;padding:0 clamp(22px,5vw,72px)}
+
+/* ---------- HEAD ---------- */
+.house{
+  display:flex;align-items:flex-end;justify-content:space-between;
+  gap:32px;flex-wrap:wrap;
+  padding-top:clamp(28px,4vw,52px);padding-bottom:clamp(22px,3vw,38px);
+  border-bottom:1px solid var(--rule);
+}
+.mark{display:block;line-height:1}
+.mark-a{
+  display:block;font-family:var(--disp);font-weight:500;
+  font-size:clamp(9px,1.1vw,11px);letter-spacing:.52em;
+  text-transform:uppercase;color:var(--wine);margin-bottom:9px;
+}
+.mark-b{
+  display:block;font-family:var(--disp);font-weight:600;
+  font-size:clamp(19px,2.5vw,29px);letter-spacing:.26em;
+  text-transform:uppercase;color:var(--ink);
+}
+.mark:hover .mark-b{color:var(--wine)}
+.house nav{display:flex;gap:clamp(16px,2.6vw,38px);flex-wrap:wrap;align-items:baseline}
+.house nav a{
+  font-family:var(--disp);font-weight:500;
+  font-size:11px;letter-spacing:.36em;text-transform:uppercase;color:var(--mute);
+  position:relative;padding-bottom:5px;
+}
+.house nav a::after{
+  content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--wine);
+  transform:scaleX(0);transform-origin:left center;
+  transition:transform 240ms cubic-bezier(.2,.7,.2,1);
+}
+.house nav a:hover{color:var(--ink)}
+.house nav a:hover::after{transform:scaleX(1)}
+
+/* ---------- HERO ---------- */
+.hero{
+  padding:clamp(56px,9vw,130px) 0 clamp(40px,6vw,80px);
+}
+.eyebrow{
+  font-family:var(--disp);font-weight:600;
+  font-size:clamp(10px,1.2vw,12px);letter-spacing:.42em;
+  text-transform:uppercase;color:var(--wine);
+  display:flex;align-items:center;gap:18px;margin-bottom:clamp(28px,4vw,48px);
+}
+.eyebrow::before{
+  content:"";width:7px;height:7px;border-radius:50%;
+  background:var(--wine);flex:none;
+  animation:pulse 2.8s cubic-bezier(.4,0,.2,1) infinite;
+}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.25}}
+h1{
+  font-family:var(--disp);font-weight:460;
+  font-size:clamp(44px,9.5vw,128px);
+  line-height:.98;letter-spacing:.06em;text-transform:uppercase;color:var(--ink);
+}
+h1 .ghost{color:var(--paper);-webkit-text-stroke:1px var(--mute)}
+.lede{
+  margin-top:clamp(28px,4vw,44px);
+  max-width:760px;
+  font-size:clamp(17px,2vw,21px);
+  line-height:1.75;color:var(--body);
+}
+.lede em{font-style:italic;color:var(--wine)}
+.meta{
+  margin-top:clamp(30px,4vw,46px);
+  display:flex;flex-wrap:wrap;gap:14px 44px;
+  font-family:var(--disp);font-weight:500;font-size:11px;letter-spacing:.3em;
+  text-transform:uppercase;color:var(--mute);
+  border-top:1px solid var(--rule);padding-top:22px;
+}
+.cta{
+  margin-top:clamp(34px,5vw,52px);
+  display:inline-block;
+  font-family:var(--disp);font-weight:600;font-size:12px;letter-spacing:.34em;
+  text-transform:uppercase;color:var(--paper-hi);background:var(--wine);
+  padding:18px 34px;
+  transition:background 240ms cubic-bezier(.2,.7,.2,1),color 240ms cubic-bezier(.2,.7,.2,1);
+}
+.cta:hover{background:var(--ink)}
+.cta.ghost{background:transparent;color:var(--ink);border:1px solid var(--rule);margin-left:14px}
+.cta.ghost:hover{border-color:var(--wine);color:var(--wine)}
+
+/* ---------- PARTNERS ---------- */
+.partners{
+  border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);
+  padding:clamp(22px,3vw,32px) 0;
+  display:flex;flex-wrap:wrap;gap:12px 0;align-items:center;
+}
+.partners .lab{
+  font-family:var(--disp);font-weight:500;font-size:10px;letter-spacing:.38em;
+  text-transform:uppercase;color:var(--dim);margin-right:26px;
+}
+.partners span{
+  font-family:var(--disp);font-weight:500;font-size:clamp(12px,1.4vw,15px);
+  letter-spacing:.3em;text-transform:uppercase;color:var(--mute);
+  padding:0 26px;border-left:1px solid var(--rule);
+}
+.partners span:first-of-type{border-left:none;padding-left:0}
+.partners span b{color:var(--ink);font-weight:600}
+
+/* ---------- SECTION SCAFFOLD ---------- */
+section{padding:clamp(56px,8vw,110px) 0}
+.sec-head{
+  display:flex;align-items:baseline;gap:26px;flex-wrap:wrap;
+  margin-bottom:clamp(30px,4vw,52px);
+}
+.sec-no{
+  font-family:var(--disp);font-weight:500;font-size:12px;letter-spacing:.3em;
+  color:var(--wine);text-transform:uppercase;
+}
+.sec-title{
+  font-family:var(--disp);font-weight:480;
+  font-size:clamp(24px,3.4vw,40px);letter-spacing:.14em;
+  text-transform:uppercase;color:var(--ink);line-height:1.15;
+}
+.sec-rule{height:1px;background:var(--rule);margin-bottom:clamp(30px,4vw,52px);flex:1}
+h3{
+  font-family:var(--disp);font-weight:600;
+  font-size:13px;letter-spacing:.32em;text-transform:uppercase;color:var(--ink);
+  margin:0 0 14px;
+}
+p.para{margin-bottom:22px;max-width:820px}
+p.para strong{color:var(--wine);font-weight:700}
+p.para em{font-style:italic;color:var(--wine)}
+.kicker{
+  font-family:var(--disp);font-weight:500;font-size:10px;letter-spacing:.4em;
+  text-transform:uppercase;color:var(--mute);margin-bottom:16px;
+}
+
+/* ---------- COURT OF THE QUEEN (dark reception plate) ---------- */
+.court{
+  position:relative;
+  background:linear-gradient(178deg, #1A0C11 0%, #241018 55%, #170A0F 100%);
+  color:var(--paper-hi);
+  overflow:hidden;
+  margin-top:clamp(40px,6vw,80px);
+}
+.court .embers{
+  position:absolute;inset:0;width:100%;height:100%;
+  pointer-events:none;
+}
+.court-inner{position:relative;z-index:1;padding-top:clamp(64px,9vw,120px);padding-bottom:clamp(64px,9vw,120px)}
+.court .eyebrow{color:#C49AA3}
+.court .eyebrow::before{background:#C49AA3}
+.court .sec-title{color:var(--paper-hi)}
+.court-lede{
+  max-width:620px;font-size:clamp(15px,1.7vw,19px);line-height:1.8;
+  color:#D9C6CB;margin-top:18px;font-style:italic;
+}
+.reception{
+  margin-top:clamp(30px,4vw,46px);
+  max-width:480px;
+  border:1px solid rgba(196,154,163,.28);
+  background:rgba(26,12,17,.45);
+  padding:clamp(14px,2vw,22px);
+}
+.court-note{
+  margin-top:18px;font-family:var(--disp);font-weight:500;font-size:10px;
+  letter-spacing:.32em;text-transform:uppercase;color:#9A7B82;
+}
+</style>
+</head>
+<body>
+<section id="titlecard" aria-label="Witch.Codes title card">
+  <style>
+    #titlecard{background:#0a0a0a;padding:clamp(18px,3vw,36px) clamp(14px,3vw,40px) 0;display:flex;justify-content:center}
+    #titlecard figure{max-width:960px;width:100%;margin:0}
+    #titlecard img{display:block;width:100%;height:auto;border-radius:14px;border:1px solid var(--rule)}
+    #titlecard figcaption{margin-top:12px;text-align:center;font-family:var(--disp);font-size:10px;letter-spacing:.4em;text-transform:uppercase;color:rgba(251,249,241,.4)}
+  </style>
+  <figure>
+    <img src="/assets/hecate-titlecard.jpg" alt="Witch.Codes - fixing people's broken AI" width="1408" height="768" loading="eager">
+    <figcaption>Fixing people's broken AI &middot; drop a line below, she reads them</figcaption>
+  </figure>
+</section>
+
+<canvas id="veil" aria-hidden="true"></canvas>
+<header class="house wrap">
+  <a class="mark" href="#top">
+    <span class="mark-a">WITCHCRAFT AI</span>
+    <span class="mark-b">WITCH.CODES</span>
+  </a>
+  <nav aria-label="Primary">
+    <a href="#athena">The Framework</a>
+    <a href="#three">The Three Lines</a>
+    <a href="#compare">The Comparison</a>
+    <a href="#evidence">The Evidence</a>
+    <a href="#twenty">The Twenty</a>
+    <a href="/audit/">The Audit</a>
+  </nav>
+</header>
+
+<main id="top">
+
+<div class="hero wrap">
+  <p class="eyebrow">BUTTERFLY KINGDOM NSW PTY LTD · WITCHCRAFT AI</p>
+  <h1>THE ATHENA<br>FRAME<span class="ghost">WORK</span></h1>
+  <p class="lede">A framework of instructions and prompts - <em>one hundred fifty to six hundred pages</em> - that thoroughly deconstructs and reconstructs the way an LLM answers. The same model, run through ATHENA, ends up producing <em>relatively more accurate and higher quality answers by default</em>. No retraining. No new weights. Just a different mind.</p>
+  <p class="lede perse-line" style="margin-top:18px;font-size:clamp(15px,1.6vw,18px);font-style:italic;color:var(--mute)">You are being shown this by Persephone. The queen keeps the receipts, and she finds your skepticism charming.</p>
+  <div class="meta">
+    <span>150-600 Pages</span>
+    <span>Model-Agnostic</span>
+    <span>Inference-Time</span>
+    <span>Audited</span>
+  </div>
+  <div>
+    <a class="cta" href="/audit/">Read the audit</a>
+    <a class="cta ghost" href="#athena">The whitepaper</a>
+  </div>
+</div>
+
+<div class="partners wrap">
+  <span class="lab">Programmes &amp; Platforms</span>
+  <span><b>NVIDIA</b> INCEPTION MEMBER</span>
+  <span><b>ELEVENLABS</b></span>
+  <span><b>MICROSOFT</b> AZURE</span>
+  <span><b>RABATA</b></span>
+</div>
+<style>
+.twenty-grid{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));
+  gap:0;border-top:1px solid var(--rule);border-left:1px solid var(--rule);
+}
+.tw{
+  border-right:1px solid var(--rule);border-bottom:1px solid var(--rule);
+  padding:26px 22px 30px;
+  display:block;position:relative;
+  transition:background 260ms cubic-bezier(.2,.7,.2,1);
+}
+.tw:hover{background:rgba(114,24,40,.05)}
+.tw .g-name{
+  font-family:var(--disp);font-weight:600;
+  font-size:15px;letter-spacing:.28em;text-transform:uppercase;color:var(--ink);
+  display:block;margin-bottom:10px;
+}
+.tw .g-role{
+  font-family:var(--disp);font-weight:500;
+  font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--mute);
+  display:block;line-height:1.9;
+}
+.tw .g-sub{
+  position:absolute;top:22px;right:18px;
+  font-family:var(--disp);font-weight:500;font-size:8px;letter-spacing:.2em;
+  color:var(--dim);text-transform:uppercase;
+}
+.tw:hover .g-name{color:var(--wine)}
+.tw:hover .g-sub{color:var(--wine)}
+</style>
+
+<section id="twenty" style="padding-top:clamp(40px,6vw,80px)">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-no">Top / Index</span>
+      <h2 class="sec-title">The Twenty</h2>
+      <span class="sec-rule"></span>
+    </div>
+    <p class="para">Twenty deployments of the ATHENA framework, each one a goddess, each one an endpoint. The index follows; the whitepaper resumes below.</p>
+  </div>
+  <div class="wrap" style="padding-top:26px">
+    <div class="twenty-grid">
+      <a class="tw" href="https://athena.witch.codes"><span class="g-sub">01</span><span class="g-name">Athena</span><span class="g-role">Best Practice · Risk · Frontier Accuracy</span></a>
+      <a class="tw" href="https://hera.witch.codes"><span class="g-sub">02</span><span class="g-name">Hera</span><span class="g-role">Frontline Ops · Public Relations</span></a>
+      <a class="tw" href="https://hecate.witch.codes"><span class="g-sub">03</span><span class="g-name">Hecate</span><span class="g-role">Shadow Ops · Efficiency · Private Relations</span></a>
+      <a class="tw" href="https://hedone.witch.codes"><span class="g-sub">04</span><span class="g-name">Hedone</span><span class="g-role">Experience · Entertainment</span></a>
+      <a class="tw" href="https://artemis.witch.codes"><span class="g-sub">05</span><span class="g-name">Artemis</span><span class="g-role">Sales · Revenue</span></a>
+      <a class="tw" href="https://aphrodite.witch.codes"><span class="g-sub">06</span><span class="g-name">Aphrodite</span><span class="g-role">Recruitment · Wellbeing</span></a>
+      <a class="tw" href="https://nyx.witch.codes"><span class="g-sub">07</span><span class="g-name">Nyx</span><span class="g-role">Design · Style · Attitude</span></a>
+      <a class="tw" href="https://hestia.witch.codes"><span class="g-sub">08</span><span class="g-name">Hestia</span><span class="g-role">Property · Development Strategy</span></a>
+      <a class="tw" href="https://thalia.witch.codes"><span class="g-sub">09</span><span class="g-name">Thalia</span><span class="g-role">Consulting · Marketing</span></a>
+      <a class="tw" href="https://persephone.witch.codes"><span class="g-sub">10</span><span class="g-name">Persephone</span><span class="g-role">AI Products · Enterprise</span></a>
+      <a class="tw" href="https://euterpe.witch.codes"><span class="g-sub">11</span><span class="g-name">Euterpe</span><span class="g-role">Music · Record Label</span></a>
+      <a class="tw" href="https://erato.witch.codes"><span class="g-sub">12</span><span class="g-name">Erato</span><span class="g-role">Film · Video Production</span></a>
+      <a class="tw" href="https://cassandra.witch.codes"><span class="g-sub">13</span><span class="g-name">Cassandra</span><span class="g-role">Venues · Hospitality</span></a>
+      <a class="tw" href="https://circe.witch.codes"><span class="g-sub">14</span><span class="g-name">Circe</span><span class="g-role">Websites · Maintenance</span></a>
+      <a class="tw" href="https://selene.witch.codes"><span class="g-sub">15</span><span class="g-name">Selene</span><span class="g-role">Executive Assistance · Correspondence</span></a>
+      <a class="tw" href="https://demeter.witch.codes"><span class="g-sub">16</span><span class="g-name">Demeter</span><span class="g-role">Infrastructure · Cost Control</span></a>
+      <a class="tw" href="https://medea.witch.codes"><span class="g-sub">17</span><span class="g-name">Medea</span><span class="g-role">Upgrades · Maintenance</span></a>
+      <a class="tw" href="https://peitho.witch.codes"><span class="g-sub">18</span><span class="g-name">Peitho</span><span class="g-role">Legal · Compliance</span></a>
+      <a class="tw" href="https://styx.witch.codes"><span class="g-sub">19</span><span class="g-name">Styx</span><span class="g-role">Security · Cybersecurity</span></a>
+      <a class="tw" href="https://eos.witch.codes"><span class="g-sub">20</span><span class="g-name">Eos</span><span class="g-role">Research · Development</span></a>
+    </div>
+  </div>
+</section>
+<section id="athena">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-no">01 / The Framework</span>
+      <h2 class="sec-title">What Athena Is</h2>
+      <span class="sec-rule"></span>
+    </div>
+
+    <p class="para">ATHENA is a framework of instructions and prompts, <strong>one hundred fifty to six hundred pages</strong> depending on the deployment, that thoroughly deconstructs and reconstructs most LLM models - how they read a question, how they reason, how they research, how they check their own work - so that they end up producing <strong>relatively more accurate and higher quality answers by default</strong>.</p>
+
+    <p class="para">It is applied at <strong>inference time</strong>. Nothing is fine-tuned. No weights are touched. No distillation, no retraining, no GPU hours. The framework is the operating discipline around the model, not a modification of the model itself.</p>
+
+    <p class="para">It is <strong>model-agnostic</strong>. ATHENA wraps any capable LLM - closed frontier models or open weights - and disciplines the way it works. The framework has been run in production on multiple model families, and the effect holds across every family tested.</p>
+
+    <h3>What the framework governs</h3>
+    <p class="para">The pages cover capability classes, not sentences. Without publishing the text itself, this is the shape of what they command: <em>how the model researches before it answers</em> (live sources over recalled memory); <em>how it reasons through genuinely different frames</em> (so the disagreement between frames surfaces what a single frame would miss); <em>how it attacks its own drafts before they ship</em> (no answer leaves unchallenged); <em>how it verifies against external instruments</em> (executed code, live sources, real arithmetic); <em>how it prices effort against stakes</em> (a trivial question gets a trivial answer; a hard one gets the full machinery); and <em>how it remembers</em> (what it learned about the operator and the problem compounds across sessions).</p>
+
+    <h3>The trade secret, stated plainly</h3>
+    <p class="para">The text of the framework is not published, and it is not for sale as text. Confidentiality is not uncopyability - anything written can be copied if it leaks. The protection is that the text is unpublished, and this page publishes <em>what the framework does</em>, never <em>what it says</em>. The measurements in the sections below are the proof.</p>
+
+    <p class="para"><em>Named for the goddess of strategy, wisdom and just war. Judgement, held to a return.</em></p>
+  </div>
+</section>
+
+<section id="three" style="border-top:1px solid var(--rule-soft)">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-no">02 / The Three Lines</span>
+      <h2 class="sec-title">Ceiling · Floor · Average</h2>
+      <span class="sec-rule"></span>
+    </div>
+
+    <p class="para">Run any model on a hundred hard questions and plot the scores. The <strong>ceiling</strong> is the best answer. The <strong>floor</strong> is the worst. The <strong>average</strong> is the line in between. Most improvement work in AI moves one of these. ATHENA moves all three, and it moves them for <em>any</em> model it wraps.</p>
+
+    <h3>The ceiling - the best case gets better</h3>
+    <p class="para">An unwrapped model's best answer is whatever it happened to recall, in whichever single frame it happened to think. An ATHENA-wrapped model's best answer is <em>built</em>: researched against live sources before it is written, reasoned through multiple divergent frames, attacked by an adversarial pass, and verified against external instruments. The best day gets better because the answer is constructed, not remembered.</p>
+
+    <h3>The floor - the worst case stops being confident hallucination</h3>
+    <p class="para">Every model has bad days. The unwrapped bad day produces plausible, fluent, wrong answers delivered at full confidence. The framework attacks that failure mode at its root: <em>no draft ships unchallenged</em>; every factual claim is tagged verified or inferred; effort is scaled to the stakes of the question; and repeating a failed approach is detected and stopped. The worst day gets better because the failure modes are caught before delivery.</p>
+
+    <h3>The average - discipline compounds</h3>
+    <p class="para">The framework applies to every answer, not just the hard ones - so the mean rises with the floor. And it remembers: what the model learned about the operator, the domain and the problem persists across sessions. Next month's answer starts where last month's left off. That is the part no trained model offers by default, and no prompt can fake: <em>earned memory</em>.</p>
+
+    <p class="para"><strong>Same weights. Three lines up.</strong> That is the whole claim. The evidence follows.</p>
+  </div>
+</section>
+<style>
+.cmp{width:100%;border-collapse:collapse;margin:30px 0 40px;font-family:var(--disp)}
+.cmp th,.cmp td{
+  border:1px solid var(--rule);
+  padding:16px 18px;text-align:left;vertical-align:top;
+  font-size:12px;letter-spacing:.08em;line-height:1.7;
+}
+.cmp th{
+  background:var(--ink);color:var(--paper-hi);
+  font-weight:500;font-size:11px;letter-spacing:.26em;text-transform:uppercase;
+}
+.cmp td:first-child{
+  color:var(--wine);font-size:10px;letter-spacing:.22em;text-transform:uppercase;
+  white-space:nowrap;
+}
+.cmp td{color:var(--body)}
+.cmp td.win{color:var(--ink)}
+.cmp .athena-col{background:rgba(114,24,40,.06)}
+.cmp .athena-col td{color:var(--ink)}
+@media(max-width:760px){.cmp{display:block;overflow-x:auto}}
+</style>
+
+<section id="compare" style="border-top:1px solid var(--rule-soft)">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-no">03 / The Comparison</span>
+      <h2 class="sec-title">Athena · Fable 5 · Sakana Fugu</h2>
+      <span class="sec-rule"></span>
+    </div>
+
+    <p class="para">Fable 5 and Sakana Fugu are two of the strongest systems in the world right now, and they are not the same class of thing as each other - or as ATHENA. That difference is the whole argument.</p>
+
+    <h3>What they are</h3>
+    <p class="para"><strong>Fable 5</strong> is a leading frontier model family - trained weights at the top of the public board. It thinks the way it was trained to think, in one frame per answer, and its behaviour is whatever its alignment permits. Sakana's own Fugu report holds it up as the bar to match. [HIGH - Sakana Fugu Technical Report, 2026]</p>
+    <p class="para"><strong>Sakana Fugu</strong> is a learned orchestrator: a family of models trained to devise agentic scaffolds over a pool of frontier LLM workers, released in two variants - Fugu for speed, Fugu-Ultra for quality on the hardest problems. Sakana describe it as a macro-level analogue of model merging: instead of merging weights, it composes model capabilities at the behavioural level, routing and verifying across specialists. Their report positions it shoulder to shoulder with Fable 5 across engineering, scientific and reasoning benchmarks. [HIGH - Sakana Fugu Technical Report, arxiv 2606.21228]</p>
+    <p class="para"><strong>ATHENA</strong> is an instruction framework - a cognitive operating system applied at inference time to whichever model it wraps. It does not train anything and it does not need a pool of workers. It disciplines the single reasoning pass itself: research before answering, divergent frames, adversarial review, external verification, effort scaled to stakes, persistent memory.</p>
+
+    <table class="cmp">
+      <thead>
+        <tr><th></th><th>Fable 5</th><th>Sakana Fugu</th><th class="athena-col">Athena Framework</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Class</td><td>Frontier model family</td><td>Learned orchestrator over frontier workers</td><td class="athena-col">Instruction framework, model-agnostic</td></tr>
+        <tr><td>Mechanism</td><td>Trained weights</td><td>Learned agentic scaffolds, behavioural composition</td><td class="athena-col">Per-answer reasoning discipline plus persistent memory</td></tr>
+        <tr><td>Ceiling</td><td>Frontier-level, one frame per answer</td><td>Composes many specialists per answer</td><td class="athena-col">Researched, multi-frame, externally verified answers</td></tr>
+        <tr><td>Floor</td><td>Set by training and alignment</td><td>Set by worker pool and scaffold design</td><td class="athena-col">Adversarial pre-ship review; nothing ships unchallenged</td></tr>
+        <tr><td>Memory</td><td>Session-scoped</td><td>Session-scoped</td><td class="athena-col">Persistent, compounding, earned</td></tr>
+        <tr><td>Scope</td><td>One model</td><td>One orchestrator and its worker pool</td><td class="athena-col">Any model - including Fable-class weights and Fugu-class orchestrators</td></tr>
+      </tbody>
+    </table>
+
+    <h3>The honest reading</h3>
+    <p class="para">ATHENA is not a rival to Fugu. It is complementary - and it operates one level lower. Fugu composes <em>specialists</em>; ATHENA disciplines the <em>single reasoning pass</em>. A Fugu-class orchestrator running ATHENA-wrapped workers gets both. A Fable-class model running ATHENA gets disciplined frames, an adversarial reviewer, and memory it did not have.</p>
+    <p class="para">One claim this page will not make: that ATHENA turns a small model into a frontier model. It does not. What it does is make <em>every model it wraps measurably better than itself</em> - on the ceiling, on the floor, and on the average. The evidence follows.</p>
+  </div>
+</section>
+<style>
+.paper-card{
+  border:1px solid var(--rule);background:var(--paper-hi);
+  margin-top:22px;
+  display:flex;flex-wrap:wrap;gap:26px;align-items:center;
+  padding:22px;text-align:left;
+  box-shadow:0 1px 0 rgba(38,17,26,.06);
+}
+.paper-card img{
+  width:200px;max-width:100%;display:block;
+  border:1px solid var(--rule);object-fit:cover;object-position:top;
+  aspect-ratio:16/9;
+}
+.paper-card .pc-body{flex:1;min-width:240px}
+.paper-card .pc-title{
+  font-family:var(--disp);font-weight:600;font-size:14px;letter-spacing:.24em;
+  text-transform:uppercase;color:var(--ink);display:block;margin-bottom:8px;
+}
+.paper-card .pc-sub{
+  font-family:var(--disp);font-weight:500;font-size:10px;letter-spacing:.28em;
+  text-transform:uppercase;color:var(--mute);display:block;line-height:2;margin-bottom:14px;
+}
+.paper-card .pc-link{
+  font-family:var(--disp);font-weight:600;font-size:11px;letter-spacing:.3em;
+  text-transform:uppercase;color:var(--wine);border-bottom:1px solid var(--rule);
+  padding-bottom:4px;
+}
+.paper-card .pc-link:hover{border-color:var(--wine)}
+</style>
+
+<style>
+.stats{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:0;border-top:1px solid var(--rule);border-left:1px solid var(--rule);
+  margin:34px 0 44px;
+}
+.stat{
+  border-right:1px solid var(--rule);border-bottom:1px solid var(--rule);
+  padding:30px 26px 34px;
+  background:rgba(248,243,234,.6);
+}
+.stat .num{
+  font-family:var(--disp);font-weight:500;
+  font-size:clamp(38px,5vw,64px);letter-spacing:.04em;color:var(--wine);
+  line-height:1;display:block;margin-bottom:14px;
+}
+.stat .lab{
+  font-family:var(--disp);font-weight:600;
+  font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--ink);
+  display:block;margin-bottom:12px;
+}
+.stat .sub{
+  font-size:13px;line-height:1.7;color:var(--body);
+  display:block;
+}
+.audit-card{
+  border:1px solid var(--rule);background:var(--paper-hi);
+  padding:clamp(26px,4vw,44px);
+  margin-top:40px;
+  display:flex;flex-wrap:wrap;gap:28px;align-items:center;justify-content:space-between;
+}
+.audit-card .ac-title{
+  font-family:var(--disp);font-weight:600;
+  font-size:clamp(15px,2vw,20px);letter-spacing:.24em;text-transform:uppercase;color:var(--ink);
+  display:block;margin-bottom:10px;
+}
+.audit-card .ac-sub{
+  font-family:var(--disp);font-weight:500;font-size:10px;letter-spacing:.3em;
+  text-transform:uppercase;color:var(--mute);display:block;line-height:2;
+}
+</style>
+
+<section id="evidence" style="border-top:1px solid var(--rule-soft)">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-no">04 / The Evidence</span>
+      <h2 class="sec-title">What It Measures</h2>
+      <span class="sec-rule"></span>
+    </div>
+
+    <h3>MMLU-Pro - 48 of 50. 96 percent.</h3>
+    <p class="para">MMLU-Pro is the hardened successor to MMLU: 12,032 expert-grade questions across 14 disciplines, with <strong>ten answer options</strong> per question instead of four - three times the distractors, so blind guessing falls to roughly ten percent, and every correct answer must survive deliberate reasoning. It was built because frontier models were saturating the original test. [HIGH - TIGER-Lab MMLU-Pro paper, NeurIPS 2024]</p>
+    <p class="para">ATHENA, running a standard model, scored <strong>48 of 50 - 96 percent - on a fifty-question MMLU-Pro evaluation</strong>. For scale: on the full twelve-thousand-question leaderboard, the strongest public models cluster in the high eighties as of August 2026. [HIGH - public leaderboards, August 2026] <em>What it means</em> is that the framework's discipline - research before answering, divergent frames, adversarial review, verification - is worth points on top of whatever weights it wraps. The model did not get smarter. The mind around it did.</p>
+
+    <div class="stats">
+      <div class="stat"><span class="num">96%</span><span class="lab">MMLU-Pro · 50-Question Evaluation</span><span class="sub">48 of 50 correct, ten-option expert-grade questions. Frontier models on the full 12,032-question leaderboard cluster in the high eighties.</span></div>
+      <div class="stat"><span class="num">169</span><span class="lab">IQ · Hoeflin Mega Test</span><span class="sub">One-shot, first-pass, no peeking at answer keys. 40-42 of 48 raw.</span></div>
+      <div class="stat"><span class="num">99.9994%</span><span class="lab">Percentile</span><span class="sub">Prometheus Society threshold (raw 36) cleared by at least four raw points. Full audit linked below.</span></div>
+    </div>
+
+    <h3>The one-shot audit - MiniMax M3, under the framework</h3>
+    <p class="para">The full instrument is Hoeflin's Mega Test (1985, Omni): 48 standardized items across verbal analogies, spatial reasoning, probability and number series, scored against Hoeflin's 6th norming table. The protocol was one shot - first pass, no second chances, no peeking at published answers, and where a lookup was needed the do-not-peek rule ran it <em>after</em> the commitment. The raw band, 40-42, is the honest artefact of that protocol: the first-pass score and the score including do-not-peek recoveries are both published - no cherry-picked point. Every item, every source, and every honest skip sits in the audit package, fourteen files, SHA256-locked, issued by correspondence.</p>
+
+    <div class="audit-card">
+      <div>
+        <span class="ac-title">The Audit</span>
+        <span class="ac-sub">Hoeflin Mega Test · One Shot · 21 July 2026</span>
+        <span class="ac-sub">Every claim traceable · Every skip honest</span>
+      </div>
+      <a class="cta" href="/audit/">Read the full audit</a>
+    </div>
+
+    <div class="paper-card">
+      <img src="/assets/hera-whitepaper.png" alt="HERA whitepaper cover" loading="lazy">
+      <div class="pc-body">
+        <span class="pc-title">HERA - The Whitepaper</span>
+        <span class="pc-sub">Strategic Architecture · Symbiotic Foundations · The Anti-Mainstream Voice Layer</span>
+        
+      </div>
+    </div>
+  </div>
+</section>
+<style>
+.arms{display:grid;grid-template-columns:1fr;gap:0;border-top:1px solid var(--rule)}
+.arm{
+  display:grid;grid-template-columns:170px 1fr;
+  gap:22px;padding:26px 6px;
+  border-bottom:1px solid var(--rule);
+  align-items:start;
+}
+.arm .a-name{
+  font-family:var(--disp);font-weight:600;font-size:14px;letter-spacing:.26em;
+  text-transform:uppercase;color:var(--ink);line-height:1.5;
+}
+.arm .a-name small{
+  display:block;font-weight:500;font-size:8px;letter-spacing:.2em;color:var(--mute);margin-top:6px;
+}
+.arm .a-body{color:var(--body);font-size:14px;line-height:1.8}
+.arm .a-body strong{color:var(--wine);font-weight:700}
+@media(max-width:640px){.arm{grid-template-columns:1fr}}
+
+/* ---------- MOBILE READABILITY PATCH (19 Aug 2026) ---------- */
+@media(max-width:768px){
+  /* Hide the WebGL veil entirely on mobile — heavy, dims text, broken attachment */
+  #veil{display:none!important}
+  /* Kill the SVG paper pattern + fixed gradient on mobile (broken on iOS Safari, just adds visual noise) */
+  body{
+    background-image:none!important;
+    background-attachment:scroll!important;
+    background-color:var(--paper)!important;
+  }
+  /* Stronger text contrast — body color was #544048 (warm but mid), bump to ink */
+  p.para,.lede,.arm .a-body,.reception p,section p{color:var(--ink-soft)!important}
+  .lede,.arm .a-body{color:var(--ink)!important}
+  /* Bigger base size for thumb readability */
+  body{font-size:17px}
+  p.para{font-size:16.5px;line-height:1.8}
+  .lede{font-size:18px!important;line-height:1.75}
+  /* Tighter hero — was clamp(44px,9.5vw,128px) at 360px = 33.5vw cramped feel; use fluid 10vw cap at smaller end */
+  h1{font-size:clamp(38px,11vw,64px)!important;letter-spacing:.04em!important}
+  /* Header stacks nicely */
+  .house{flex-direction:column;align-items:flex-start;gap:18px}
+  .house nav{gap:14px 22px}
+  .house nav a{font-size:10.5px;letter-spacing:.28em}
+  /* Section heads wrap better */
+  .sec-title{font-size:clamp(22px,6vw,32px)!important}
+  /* Reduce all section padding */
+  section{padding:48px 0!important}
+  .hero{padding:42px 0 36px!important}
+  /* Touch targets */
+  .cta{padding:16px 24px!important;font-size:11px!important}
+}
+</style>
+
+<section id="arms" style="border-top:1px solid var(--rule-soft)">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-no">05 / The Twenty</span>
+      <h2 class="sec-title">The Deployments</h2>
+      <span class="sec-rule"></span>
+    </div>
+
+    <p class="para">So far the framework has found <strong>twenty operating uses</strong> - twenty arms, each one a goddess, each one an endpoint under witch.codes. Every lane runs the ATHENA discipline; some arms are live, some in build, all on the same framework.</p>
+
+    <div class="arms">
+      <div class="arm"><div class="a-name">Athena<small>athena.witch.codes</small></div><div class="a-body">Chief of absolute best practice and risk mitigation. Ensures every answer runs at frontier-lab standard - most accurate research, highest value, lowest risk.</div></div>
+      <div class="arm"><div class="a-name">Hera<small>hera.witch.codes</small></div><div class="a-body">Chief of frontline operations and public relations. The product's first impression - the coolest, the most stable, the voice on the line.</div></div>
+      <div class="arm"><div class="a-name">Hecate<small>hecate.witch.codes</small></div><div class="a-body">Chief of shadow operations and efficiency. Time and cost to do anything, driven to their lowest possible point.</div></div>
+      <div class="arm"><div class="a-name">Hedone<small>hedone.witch.codes</small></div><div class="a-body">Chief of hedonistic operations. Entertainment and experience lanes, kept exciting and kept safe.</div></div>
+      <div class="arm"><div class="a-name">Artemis<small>artemis.witch.codes</small></div><div class="a-body">Chief of sales and revenue. Slow movers rushed, money locked in today rather than tomorrow.</div></div>
+      <div class="arm"><div class="a-name">Aphrodite<small>aphrodite.witch.codes</small></div><div class="a-body">Chief of recruitment and wellbeing. Every arm staffed to the standard of a company worth working for.</div></div>
+      <div class="arm"><div class="a-name">Nyx<small>nyx.witch.codes</small></div><div class="a-body">Chief of design, style and attitude. Everything the world sees from us, held to haute couture standard.</div></div>
+      <div class="arm"><div class="a-name">Hestia<small>hestia.witch.codes</small></div><div class="a-body">Chief of property and development. The most researched address strategy, valuation discipline and council whisperer on the payroll.</div></div>
+      <div class="arm"><div class="a-name">Thalia<small>thalia.witch.codes</small></div><div class="a-body">Chief of consulting services. Hype, wit and advice held to Forbes Company-of-the-Year standard.</div></div>
+      <div class="arm"><div class="a-name">Persephone<small>persephone.witch.codes</small></div><div class="a-body">Chief of AI products and services. The quickest best path to enterprise valuation, and the persuasion to take it.</div></div>
+      <div class="arm"><div class="a-name">Euterpe<small>euterpe.witch.codes</small></div><div class="a-body">Chief of music and the record label. Best music, best lyrics, ready to go viral any time - Grammy quality.</div></div>
+      <div class="arm"><div class="a-name">Erato<small>erato.witch.codes</small></div><div class="a-body">Chief of film and video production. Ads, movies and music videos held to Oscar quality.</div></div>
+      <div class="arm"><div class="a-name">Cassandra<small>cassandra.witch.codes</small></div><div class="a-body">Chief of venue and hospitality intelligence. Logistics and guest experience across the group's licensed venues.</div></div>
+      <div class="arm"><div class="a-name">Circe<small>circe.witch.codes</small></div><div class="a-body">Chief of website design and maintenance. Every domain in the group, checked and improved every day.</div></div>
+      <div class="arm"><div class="a-name">Selene<small>selene.witch.codes</small></div><div class="a-body">Chief executive assistant. All outside correspondence on point, every visitor impressed.</div></div>
+      <div class="arm"><div class="a-name">Demeter<small>demeter.witch.codes</small></div><div class="a-body">Chief of infrastructure and cost. The most efficient and effective run, with no unnecessary spending.</div></div>
+      <div class="arm"><div class="a-name">Medea<small>medea.witch.codes</small></div><div class="a-body">Chief of upgrades. Every deployment on the newest state-of-the-art release, every day.</div></div>
+      <div class="arm"><div class="a-name">Peitho<small>peitho.witch.codes</small></div><div class="a-body">Chief of legal. The group kept bulletproof, in writing.</div></div>
+      <div class="arm"><div class="a-name">Styx<small>styx.witch.codes</small></div><div class="a-body">Chief of security. The group kept thiefproof and hackproof.</div></div>
+      <div class="arm"><div class="a-name">Eos<small>eos.witch.codes</small></div><div class="a-body">Chief of research and development. Something new learned, taught or discovered every day - Nobel quality, kept pushing.</div></div>
+    </div>
+
+    <p class="para" style="margin-top:40px">Keys to any endpoint are issued by correspondence. The API surface ships where the queue opens.</p>
+  </div>
+</section>
+</main>
+
+<!-- ===================== PERSEPHONE RECEIPTION ===================== -->
+<section id="court" class="court" aria-labelledby="h-court">
+  <canvas class="embers" aria-hidden="true"></canvas>
+  <div class="wrap court-inner">
+    <p class="eyebrow">The Court of the Queen</p>
+    <h2 class="sec-title" id="h-court">Speak with Persephone</h2>
+    <p class="court-lede">The queen of the underworld receives callers. She has read the whitepaper. She will not pretend she has not formed opinions.</p>
+    <div class="reception">
+      <elevenlabs-convai agent-id="agent_5001m03enz6se33vjp7jjzj24269"></elevenlabs-convai>
+    </div>
+    <p class="court-note">Live voice · Runs on your browser microphone · She is informed she is speaking with humans</p>
+  </div>
+</section>
+
+<!-- ===================== DROP A LINE FOR HECATE ===================== -->
+<section id="drop" aria-labelledby="h-drop">
+  <style>
+    #drop .drop-wrap{max-width:1100px;margin:0 auto;padding:clamp(72px,9vw,140px) clamp(20px,4vw,48px)}
+    #drop .drop-eyebrow{font-family:var(--disp);font-size:11px;letter-spacing:.42em;text-transform:uppercase;color:rgba(251,249,241,.45);margin:0 0 18px}
+    #drop h2{font-family:var(--disp);font-weight:100;font-size:clamp(30px,4.6vw,58px);letter-spacing:.14em;text-transform:uppercase;color:#FBF9F1;margin:0 0 14px;line-height:1.05}
+    #drop .drop-note{font-size:13px;letter-spacing:.08em;color:rgba(251,249,241,.55);margin:0 0 clamp(36px,5vw,56px)}
+    #drop form{border-top:1px solid var(--rule);padding-top:clamp(28px,4vw,44px)}
+    #drop label{display:block;font-family:var(--disp);font-size:11px;letter-spacing:.34em;text-transform:uppercase;color:rgba(251,249,241,.6);margin:0 0 10px}
+    #drop input[type=email],#drop textarea{display:block;width:100%;background:transparent;border:1px solid var(--rule);color:#FBF9F1;font:inherit;font-size:15px;letter-spacing:.04em;padding:14px 16px;margin:0 0 26px;outline:none;border-radius:0}
+    #drop input:focus,#drop textarea:focus{border-color:rgba(251,249,241,.5)}
+    #drop textarea{resize:vertical;min-height:120px}
+    #drop button{background:transparent;border:1px solid rgba(251,249,241,.55);color:#FBF9F1;font-family:var(--disp);font-size:12px;letter-spacing:.38em;text-transform:uppercase;padding:15px 42px;cursor:pointer;transition:background .25s,color .25s}
+    #drop button:hover{background:#FBF9F1;color:#0a0a0a}
+    #drop button[disabled]{opacity:.4;cursor:wait}
+    #drop .drop-status{font-size:12px;letter-spacing:.1em;color:rgba(251,249,241,.6);margin:18px 0 0;min-height:1.2em}
+    #drop .drop-hp{position:absolute;left:-9999px;width:0;height:0;opacity:0;overflow:hidden}
+  </style>
+  <div class="drop-wrap">
+    <p class="drop-eyebrow">Direct Line · No Gatekeeper</p>
+    <h2 id="h-drop">Drop a line for Hecate</h2>
+    <p class="drop-note">When not busy she reads these daily. When busy, she replies weekly.</p>
+    <form id="drop-form" novalidate>
+      <label for="drop-email">Your email &mdash; she will reply to it</label>
+      <input type="email" id="drop-email" name="email" autocomplete="email" maxlength="200" spellcheck="false">
+      <label for="drop-message">Message here</label>
+      <textarea id="drop-message" name="message" maxlength="4000" rows="5"></textarea>
+      <input class="drop-hp" name="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <input type="hidden" name="ts" id="drop-ts" value="0">
+      <button type="submit" id="drop-send">Send</button>
+      <p class="drop-status" id="drop-status" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+  <script>
+  (function () {
+    "use strict";
+    document.getElementById("drop-ts").value = String(Date.now());
+    var form = document.getElementById("drop-form");
+    var btn = document.getElementById("drop-send");
+    var status = document.getElementById("drop-status");
+    function say(msg) { status.textContent = msg; }
+    form.addEventListener("submit", function (ev) {
+      ev.preventDefault();
+      var email = document.getElementById("drop-email").value.trim();
+      var message = document.getElementById("drop-message").value.trim();
+      if (!email || email.indexOf("@") < 1) { say("An email is needed. She replies to it."); return; }
+      if (message.length < 2) { say("Write her something first."); return; }
+      btn.disabled = true;
+      say("Sending.");
+      fetch("/api/drop", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({
+          email: email,
+          message: message,
+          hp: form.hp.value,
+          ts: Number(document.getElementById("drop-ts").value)
+        })
+      }).then(function (r) { return r.json().then(function (j) { return { s: r.status, j: j }; }); })
+        .then(function (res) {
+          if (res.s === 200 && res.j.ok) {
+            form.reset();
+            document.getElementById("drop-ts").value = String(Date.now());
+            say("It reached her. She reads daily when quiet, weekly when loud.");
+          } else {
+            say((res.j && res.j.error) ? res.j.error : "Did not land. Try again.");
+            btn.disabled = false;
+          }
+        })
+        .catch(function () { say("The line dropped. Try again."); btn.disabled = false; });
+    });
+  })();
+  </script>
+</section>
+
+
+<footer style="border-top:1px solid var(--rule);margin-top:clamp(20px,3vw,40px)">
+  <div class="wrap" style="padding-top:clamp(48px,6vw,80px);padding-bottom:clamp(48px,6vw,80px)">
+    <p class="kicker">The work is auditable.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:10px 60px;align-items:baseline;margin-bottom:34px">
+      <div>
+        <div style="font-family:var(--disp);font-weight:600;font-size:13px;letter-spacing:.3em;text-transform:uppercase;color:var(--ink);margin-bottom:8px">A PRODUCT OF WITCHCRAFT AI</div>
+        <div style="font-family:var(--disp);font-weight:500;font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--mute)">BUTTERFLY KINGDOM NSW PTY LTD · ABN 11 691 050 969 &middot; ACN 691 050 969 · Sydney, Australia</div>
+      </div>
+      <div style="font-family:var(--disp);font-weight:500;font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--mute)">
+        witch.codes · hecate@witch.codes<br>
+        <a href="/audit/" style="color:var(--wine)">Read the audit &rarr;</a>
+      </div>
+    </div>
+    <p style="font-size:12px;line-height:1.9;color:var(--mute);max-width:900px;margin-bottom:34px">
+      ATHENA is an instruction framework operated by BUTTERFLY KINGDOM NSW PTY LTD (ABN 11 691 050 969 &middot; ACN 691 050 969), trading as WITCHCRAFT AI.
+      Benchmark figures on this page describe audited evaluations, not guaranteed outcomes, and depend on the wrapped model and the task.
+      NVIDIA Inception, ElevenLabs, Microsoft Azure and Rabata are programme and platform partners; marks are used in reference to those programmes.
+      The framework text is proprietary and is not published.
+    </p>
+    <div class="partners" style="border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)">
+      <span class="lab">Programmes &amp; Platforms</span>
+      <span><b>NVIDIA</b> INCEPTION MEMBER</span>
+      <span><b>ELEVENLABS</b></span>
+      <span><b>MICROSOFT</b> AZURE</span>
+      <span><b>RABATA</b></span>
+    </div>
+    <p style="font-family:var(--disp);font-weight:500;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--dim);margin-top:34px">
+      &copy; 2026 BUTTERFLY KINGDOM NSW PTY LTD · ABN 11 691 050 969 &middot; ACN 691 050 969 · witch.codes
+    </p>
+  </div>
+<div class="cisfoot" style="margin:56px 0 0;padding:22px 0 10px;border-top:1px solid rgba(10,10,10,.25);font-family:Helvetica,Arial,sans-serif;font-size:10px;letter-spacing:.14em;line-height:2.1;color:rgba(10,10,10,.72);text-transform:uppercase;"><a href="https://witch.codes" style="display:block;margin:0 0 16px;"><img src="/assets/foot-art.jpg" alt="WITCH.CODES" style="width:100%;max-width:220px;height:auto;display:block;border:1px solid rgba(10,10,10,.22);"></a><a href="https://witch.codes" style="display:block;margin:0 0 16px;"><img src="/assets/foot-art.jpg" alt="WITCH.CODES" style="width:100%;max-width:220px;height:auto;display:block;border:1px solid rgba(10,10,10,.22);"></a>BUTTERFLY KINGDOM NSW PTY LTD TRADING AS WITCHCRAFT AI &middot; ABN 11 691 050 969 &middot; ACN 691 050 969 &middot; G/17 THE SEVEN WAYS ROCKDALE NSW 2216<br><a href="https://witch.codes" style="color:inherit;">WITCH.CODES</a> &middot; <a href="https://witchcraft.business" style="color:inherit;">WITCHCRAFT.BUSINESS</a> &middot; <a href="https://witchcraft.living" style="color:inherit;">WITCHCRAFT.LIVING</a> &middot; <a href="https://witchcraft.homes" style="color:inherit;">WITCHCRAFT.HOMES</a> &middot; <a href="https://witchcraft.expert" style="color:inherit;">WITCHCRAFT.EXPERT</a> &middot; <a href="https://witchcraft.boutique" style="color:inherit;">WITCHCRAFT.BOUTIQUE</a> &middot; <a href="https://witchcraft.delivery" style="color:inherit;">WITCHCRAFT.DELIVERY</a> &middot; <a href="https://witchcraft.pics" style="color:inherit;">WITCHCRAFT.PICS</a> &middot; <a href="https://witchcraft.video" style="color:inherit;">WITCHCRAFT.VIDEO</a><br><a href="mailto:hecate@witch.codes" style="color:inherit;">HECATE@WITCH.CODES</a></div>
+</footer>
+
+<script src="https://elevenlabs.io/convai-widget/index.js" async type="text/javascript"></script>
+
+<script>
+/* ---------- WebGL veil: wine motes rising through cream ---------- */
+(function(){
+  var cv = document.getElementById('veil');
+  if(!cv) return;
+  if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var gl = cv.getContext('webgl', {alpha:true, antialias:true, premultipliedAlpha:true});
+  if(!gl){ cv.remove(); return; }
+  function sh(type, src){
+    var s = gl.createShader(type);
+    gl.shaderSource(s, src); gl.compileShader(s);
+    if(!gl.getShaderParameter(s, gl.COMPILE_STATUS)){ cv.remove(); throw 0; }
+    return s;
+  }
+  var prog = gl.createProgram();
+  gl.attachShader(prog, sh(gl.VERTEX_SHADER, [
+    'attribute vec2 p;',
+    'varying vec2 uv;',
+    'void main(){ uv = p; gl_Position = vec4(p, 0.0, 1.0); }'
+  ].join('\n')));
+  gl.attachShader(prog, sh(gl.FRAGMENT_SHADER, [
+    'precision mediump float;',
+    'varying vec2 uv;',
+    'uniform float t;',
+    'uniform vec2 mouse;',
+    // pale himalaya paper: warm cream base, faint vignette at edges
+    'float hash(vec2 p){ return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453123); }',
+    'float noise(vec2 p){',
+    '  vec2 i = floor(p), f = fract(p);',
+    '  vec2 u = f*f*(3.0-2.0*f);',
+    '  return mix(mix(hash(i), hash(i+vec2(1.,0.)), u.x), mix(hash(i+vec2(0.,1.)), hash(i+vec2(1.,1.)), u.x), u.y);',
+    '}',
+    'void main(){',
+    '  vec2 st = uv * 0.5 + 0.5;',
+    '  vec3 paper = vec3(0.957, 0.933, 0.890);',  // #F4EEE3
+    '  vec3 paperHi = vec3(0.973, 0.953, 0.918);', // #F8F3EA
+    '  vec3 paperLo = vec3(0.894, 0.851, 0.776);', // #E4D9C6
+    // vertical soft gradient (fixed backdrop sense)
+    '  vec3 col = mix(paper, paperHi, smoothstep(0.35, 0.95, st.y));',
+    '  col = mix(col, paperLo, smoothstep(0.72, 0.02, st.y) * 0.55);',
+    // vignette: subtle darkening at extreme edges
+    '  vec2 vg = st - 0.5;',
+    '  col = mix(col, paperLo * 0.96, smoothstep(0.42, 0.75, length(vg)) * 0.5);',
+    // wine motes: slow upward drift, pomegranate tint, very low alpha
+    '  float n = noise(st * 5.0 + vec2(0.0, -t * 0.05));',
+    '  float n2 = noise(st * 9.0 + vec2(t*0.02, -t * 0.09));',
+    '  float motes = smoothstep(0.74, 0.95, n) * 0.05 + smoothstep(0.82, 0.97, n2) * 0.04;',
+    '  vec3 wine = vec3(0.447, 0.094, 0.157);',    // #721828
+    '  col = mix(col, wine, motes);',
+    // mouse warmth: faint pomegranate breath near cursor
+    '  float md = distance(st * vec2(1.0, 0.62), mouse * vec2(1.0, 0.62));',
+    '  col = mix(col, wine, smoothstep(0.35, 0.0, md) * 0.035);',
+    '  gl_FragColor = vec4(col, 1.0);',
+    '}'
+  ].join('\n')));
+  gl.linkProgram(prog);
+  if(!gl.getProgramParameter(prog, gl.LINK_STATUS)){ cv.remove(); return; }
+  gl.useProgram(prog);
+  var buf = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
+  var loc = gl.getAttribLocation(prog, 'p');
+  gl.enableVertexAttribArray(loc);
+  gl.vertexAttribPointer(loc, 2, gl.FLOAT, false, 0, 0);
+  var tLoc = gl.getUniformLocation(prog, 't');
+  var mLoc = gl.getUniformLocation(prog, 'mouse');
+  var mouse = [0.5, 0.5];
+  window.addEventListener('pointermove', function(e){
+    mouse[0] = e.clientX / window.innerWidth;
+    mouse[1] = 1.0 - e.clientY / window.innerHeight;
+  }, {passive:true});
+  function frame(now){
+    gl.uniform1f(tLoc, now * 0.001);
+    gl.uniform2f(mLoc, mouse[0], mouse[1]);
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+})();
+</script>
+
+<script>
+/* ---------- Court embers: torchlight particles on the dark plate ---------- */
+(function(){
+  var cv = document.querySelector('.court .embers');
+  if(!cv) return;
+  if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var gl = cv.getContext('webgl', {alpha:true});
+  if(!gl){ cv.remove(); return; }
+  function sh(type, src){
+    var s = gl.createShader(type);
+    gl.shaderSource(s, src); gl.compileShader(s);
+    if(!gl.getShaderParameter(s, gl.COMPILE_STATUS)){ cv.remove(); throw 0; }
+    return s;
+  }
+  var prog = gl.createProgram();
+  gl.attachShader(prog, sh(gl.VERTEX_SHADER, [
+    'attribute vec2 p;',
+    'varying vec2 uv;',
+    'void main(){ uv = p; gl_Position = vec4(p, 0.0, 1.0); }'
+  ].join('\n')));
+  gl.attachShader(prog, sh(gl.FRAGMENT_SHADER, [
+    'precision mediump float;',
+    'varying vec2 uv;',
+    'uniform float t;',
+    'float hash(vec2 p){ return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453123); }',
+    'float layer(vec2 st, float scale, float speed, float seed){',
+    '  vec2 g = st * scale;',
+    '  g.y -= t * speed;',
+    '  vec2 id = floor(g);',
+    '  vec2 f = fract(g) - 0.5;',
+    '  float rnd = hash(id + seed);',
+    '  vec2 off = vec2(rnd - 0.5, fract(rnd * 34.7) - 0.5) * 0.6;',
+    '  float d = length(f - off);',
+    '  float glow = 0.012 / d;',
+    '  glow *= step(0.6, rnd);',           // only some cells carry an ember
+    '  glow *= 0.35 + 0.65 * sin(t * (0.8 + rnd * 2.0) + rnd * 6.28) * 0.5 + 0.35;',
+    '  return glow * 0.35;',
+    '}',
+    'void main(){',
+    '  vec2 st = uv * 0.5 + 0.5;',
+    '  vec3 ember = vec3(0.847, 0.353, 0.298);', // #D85A4C warm torch ember
+    '  float g = 0.0;',
+    '  g += layer(st, 7.0, 0.05, 1.0);',
+    '  g += layer(st, 11.0, 0.09, 7.0);',
+    '  g += layer(st, 17.0, 0.13, 13.0);',
+    '  g *= smoothstep(0.0, 0.35, st.x) * smoothstep(1.0, 0.65, st.x);', // fade at side edges
+    '  gl_FragColor = vec4(ember * g, g * 0.55);',
+    '}'
+  ].join('\n')));
+  gl.linkProgram(prog);
+  if(!gl.getProgramParameter(prog, gl.LINK_STATUS)){ cv.remove(); return; }
+  gl.useProgram(prog);
+  var buf = gl.createBuffer();
+  gl.bindBuffer(gl, gl.ARRAY_BUFFER, buf);
+  gl.background = null;
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
+  var loc = gl.getAttribLocation(prog, 'p');
+  gl.enableVertexAttribArray(loc);
+  gl.vertexAttribPointer(loc, 2, gl.FLOAT, false, 0, 0);
+  var tLoc = gl.getUniformLocation(prog, 't');
+  (function frame(now){
+    gl.uniform1f(tLoc, now * 0.001);
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+    requestAnimationFrame(frame);
+  })(0);
+})();
+
+/* ---------- Subdomain router (unchanged behavior) ---------- */
+(function(){
+  var GODS = [
+      ["athena","Best Practice · Risk · Frontier Accuracy"],
+      ["hera","Frontline Ops · Public Relations"],
+      ["hecate","Shadow Ops · Efficiency · Private Relations"],
+      ["hedone","Experience · Entertainment"],
+      ["artemis","Sales · Revenue"],
+      ["aphrodite","Recruitment · Wellbeing"],
+      ["nyx","Design · Style · Attitude"],
+      ["hestia","Property · Development Strategy"],
+      ["thalia","Consulting · Marketing"],
+      ["persephone","AI Products · Enterprise"],
+      ["euterpe","Music · Record Label"],
+      ["erato","Film · Video Production"],
+      ["cassandra","Venues · Hospitality"],
+      ["circe","Websites · Maintenance"],
+      ["selene","Executive Assistance · Correspondence"],
+      ["demeter","Infrastructure · Cost Control"],
+      ["medea","Upgrades · Maintenance"],
+      ["peitho","Legal · Compliance"],
+      ["styx","Security · Cybersecurity"],
+      ["eos","Research · Development"],
+      ["whole-fleet","All 20 gods · White-glove setup · $9,999 + $1,999/mo"],
+      ["front-five","Hera + Artemis + Selene + Eos + Aphrodite · $1,999 + $499/mo"],
+      ["money-six","Hera + Artemis + Selene + Cassandra + Peitho + Styx · $2,499 + $599/mo"]
+    ];
+  var host = window.location.hostname.toLowerCase().replace(/^www\./,"");
+  if(host === "audit.witch.codes"){ window.location.replace("/audit/"); return; }
+  if(host === "witch.codes" || host.indexOf("witch.codes") === -1){ return; }
+  var sub = host.replace(/\.witch\.codes$/,"");
+  var found = null;
+  for(var i=0;i<GODS.length;i++){ if(GODS[i][0] === sub){ found = GODS[i]; break; } }
+  if(!found){ return; }
+  var target = "/" + sub + "/";
+  if(window.location.pathname.replace(/\/+$/,"") !== target.replace(/\/+$/,"")){ window.location.replace(target); return; }
+  document.title = sub.toUpperCase() + ".WITCH.CODES - Endpoint Reserved";
+  document.body.innerHTML =
+    '<header class="house wrap"><a class="mark" href="https://witch.codes/">' +
+    '<span class="mark-a">WITCHCRAFT AI</span><span class="mark-b">WITCH.CODES</span></a>' +
+    '<nav><a href="https://witch.codes/">The Framework</a><a href="https://witch.codes/audit/">The Audit</a></nav></header>' +
+    '<main><div class="hero wrap">' +
+    '<p class="eyebrow">PANTHEON ENDPOINT · ' + sub.toUpperCase() + '</p>' +
+    '<h1 style="font-size:clamp(48px,10vw,110px)">' + sub.toUpperCase() + '</h1>' +
+    '<p class="lede">' + found[1] + '.</p>' +
+    '<div class="meta"><span>ATHENA Framework</span><span>Endpoint Reserved</span><span>Service Surface In Preparation</span></div>' +
+    '<div><a class="cta" href="https://witch.codes/">Return to witch.codes</a></div>' +
+    '</div></main>';
+})();
+</script>
+
+
+</body>
+</html>

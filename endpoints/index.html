@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>WITCH.CODES - The Pantheon, as Endpoints</title>
+<meta name="description" content="The Witchcraft AI API portal. Ten agents as endpoints: ambient memory, voice receptionists, valuation, companionship. Keys by correspondence.">
+<link rel="canonical" href="https://witch.codes/endpoints/">
+<meta property="og:title" content="WITCH.CODES - The Pantheon, as Endpoints">
+<meta property="og:description" content="The Witchcraft AI API portal. Ten agents as endpoints: ambient memory, voice receptionists, valuation, companionship. Keys by correspondence.">
+<meta property="og:url" content="https://witch.codes/endpoints/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"WITCH.CODES - The Pantheon, as Endpoints","url":"https://witch.codes/","description":"The Witchcraft AI API portal. Ten agents as endpoints: ambient memory, voice receptionists, valuation, companionship. Keys by correspondence.","isPartOf":{"@type":"WebSite","name":"Witchcraft AI","url":"https://witchcraft.business/"},"publisher":{"@type":"Organization","name":"WITCHCRAFT AI","url":"https://pitch./"}}</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ItemList","name":"The Pantheon","itemListElement":[
+{"@type":"ListItem","position":1,"name":"hera.witch.codes","description":"Ambient memory. Live."},
+{"@type":"ListItem","position":2,"name":"thalia.witch.codes","description":"Personal agent. In build."},
+{"@type":"ListItem","position":3,"name":"artemis.witch.codes","description":"Voice receptionist. Launching."},
+{"@type":"ListItem","position":4,"name":"aphrodite.witch.codes","description":"People and wellbeing. Design."},
+{"@type":"ListItem","position":5,"name":"persephone.witch.codes","description":"Executive. Design."},
+{"@type":"ListItem","position":6,"name":"athena.witch.codes","description":"AGI programme. Research."},
+{"@type":"ListItem","position":7,"name":"hecate.witch.codes","description":"Simulated consciousness. Research."},
+{"@type":"ListItem","position":8,"name":"hestia.witch.codes","description":"Valuation. Deployed."},
+{"@type":"ListItem","position":9,"name":"nyx.witch.codes","description":"Humour. Deployed."},
+{"@type":"ListItem","position":10,"name":"nadia.witch.codes","description":"Companionship. Waitlist."}]}
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;400;600&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0B0A09;
+  --bone:#EFE9DF;
+  --body:#C9C0B2;
+  --mute:#A79C8B;
+  --rule:#3A342C;
+  --imute:#5A5145;
+  --irule:#B9AF9E;
+  --disp:"Josefin Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+  --text:"Libre Baskerville",Georgia,"Times New Roman",serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{
+  background:var(--ink);
+  color:var(--body);
+  font-family:var(--text);
+  font-size:16px;
+  line-height:1.85;
+  letter-spacing:.005em;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+a:focus-visible,button:focus-visible{outline:1px solid var(--bone);outline-offset:6px}
+.inv a:focus-visible{outline-color:var(--ink)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap}
+.skip{
+  position:absolute;left:-999px;top:0;z-index:90;
+  background:var(--bone);color:var(--ink);
+  font-family:var(--disp);font-size:12px;letter-spacing:.34em;text-transform:uppercase;
+  padding:14px 22px
+}
+.skip:focus{left:0}
+
+.wrap{max-width:1240px;margin:0 auto;padding:0 clamp(22px,5vw,72px)}
+
+/* ---------- HOUSE HEAD ---------- */
+.house{
+  display:flex;align-items:flex-end;justify-content:space-between;
+  gap:32px;flex-wrap:wrap;
+  padding-top:clamp(28px,4vw,52px);padding-bottom:clamp(22px,3vw,38px);
+  border-bottom:1px solid var(--rule)
+}
+.mark{display:block;line-height:1}
+.mark-a{
+  display:block;font-family:var(--disp);font-weight:300;
+  font-size:clamp(9px,1.1vw,11px);letter-spacing:.52em;
+  text-transform:uppercase;color:var(--mute);margin-bottom:9px
+}
+.mark-b{
+  display:block;font-family:var(--disp);font-weight:400;
+  font-size:clamp(19px,2.5vw,29px);letter-spacing:.34em;
+  text-transform:uppercase;color:var(--bone)
+}
+.mark:hover .mark-a{color:var(--bone)}
+.house nav{display:flex;gap:clamp(16px,2.6vw,38px);flex-wrap:wrap;align-items:baseline}
+.house nav a{
+  font-family:var(--disp);font-weight:300;
+  font-size:11px;letter-spacing:.36em;text-transform:uppercase;color:var(--mute);
+  position:relative;padding-bottom:5px
+}
+.house nav a::after{
+  content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--bone);
+  transform:scaleX(0);transform-origin:left center;
+  transition:transform 240ms cubic-bezier(.2,.7,.2,1)
+}
+.house nav a:hover{color:var(--bone)}
+.house nav a:hover::after{transform:scaleX(1)}
+
+/* ---------- SHARED ---------- */
+.eyebrow{
+  font-family:var(--disp);font-weight:300;
+  font-size:11px;letter-spacing:.46em;text-transform:uppercase;color:var(--mute);
+  line-height:1.6
+}
+.numeral{
+  font-family:var(--disp);font-weight:300;
+  font-size:11px;letter-spacing:.4em;text-transform:uppercase;color:var(--mute)
+}
+h2{
+  font-family:var(--disp);font-weight:200;
+  font-size:clamp(28px,4.4vw,54px);line-height:1.06;letter-spacing:.05em;
+  text-transform:uppercase;color:var(--bone);max-width:19ch
+}
+h3{
+  font-family:var(--disp);font-weight:400;
+  font-size:13px;letter-spacing:.32em;text-transform:uppercase;color:var(--bone)
+}
+section{padding:clamp(72px,10vw,150px) 0;border-top:1px solid var(--rule)}
+section:first-of-type{border-top:0}
+.head{
+  display:grid;grid-template-columns:96px 1fr;gap:clamp(18px,4vw,54px);
+  align-items:start;margin-bottom:clamp(40px,6vw,80px)
+}
+@media(max-width:760px){
+  .head{grid-template-columns:1fr;gap:16px}
+}
+
+/* ---------- OPENING ---------- */
+.open{padding-top:clamp(56px,9vw,120px);padding-bottom:clamp(56px,8vw,110px)}
+h1{
+  font-family:var(--disp);font-weight:200;
+  font-size:clamp(32px,8vw,120px);line-height:.94;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--bone);
+  margin:clamp(26px,4vw,52px) 0 0
+}
+h1 .tline{display:block;white-space:nowrap}
+h1 .mt-l{display:inline-block;will-change:transform}
+.promise{
+  font-family:var(--disp);font-weight:300;
+  font-size:clamp(17px,2.5vw,30px);letter-spacing:.3em;text-transform:uppercase;
+  color:var(--bone);margin-top:clamp(30px,4vw,54px);line-height:1.4
+}
+.lede{max-width:52ch;margin-top:26px;color:var(--body);font-size:15px;line-height:1.95}
+.cta{
+  display:inline-block;margin-top:clamp(30px,4vw,50px);
+  font-family:var(--disp);font-weight:400;font-size:12px;letter-spacing:.42em;
+  text-transform:uppercase;color:var(--bone);
+  border-bottom:1px solid var(--rule);padding-bottom:7px
+}
+.cta:hover{border-bottom-color:var(--bone)}
+.opengrid{display:grid;grid-template-columns:1fr;gap:0}
+
+/* ---------- PLATE ---------- */
+figure.plate{margin-top:clamp(56px,8vw,110px);border-top:1px solid var(--rule);padding-top:clamp(34px,5vw,60px)}
+figure.plate svg{display:block;width:min(560px,84vw);stroke:var(--mute);fill:none;stroke-width:.75}
+figure.plate figcaption{
+  font-family:var(--disp);font-weight:300;font-size:10px;letter-spacing:.42em;
+  text-transform:uppercase;color:var(--mute);margin-top:26px
+}
+
+/* ---------- THE LINE SHEET ---------- */
+table{width:100%;border-collapse:collapse}
+th{
+  text-align:left;font-family:var(--disp);font-weight:300;color:var(--mute);
+  font-size:10px;letter-spacing:.42em;text-transform:uppercase;
+  padding:0 24px 16px 0;border-bottom:1px solid var(--rule)
+}
+th:last-child{text-align:right;padding-right:0}
+td{border-bottom:1px solid var(--rule);padding:22px 24px 22px 0;vertical-align:baseline}
+td.m{
+  font-family:var(--disp);font-weight:400;font-size:clamp(13px,1.5vw,17px);
+  letter-spacing:.16em;text-transform:uppercase;color:var(--bone);white-space:nowrap
+}
+td.r{color:var(--body);font-size:14px;line-height:1.8;max-width:56ch}
+td.s{
+  font-family:var(--disp);font-weight:300;font-size:10px;letter-spacing:.36em;
+  text-transform:uppercase;color:var(--mute);white-space:nowrap;
+  text-align:right;padding-right:0
+}
+tr:hover td.s{color:var(--bone)}
+@media(max-width:820px){
+  table,tbody,tr,td{display:block;width:100%}
+  thead{display:none}
+  td{border:0;padding:0;max-width:none}
+  td.m{margin-bottom:8px}
+  td.s{text-align:left;margin-top:12px}
+  tr{border-bottom:1px solid var(--rule);padding:26px 0;display:block}
+}
+
+/* ---------- SPECIFICATION ---------- */
+pre.spec{
+  font-family:var(--text);font-size:13px;line-height:2.1;
+  white-space:pre;overflow-x:auto;color:var(--bone);
+  border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);
+  padding:clamp(24px,3.4vw,42px) 0;margin-top:8px
+}
+
+/* ---------- MEASUREMENTS ---------- */
+.lat{
+  display:grid;grid-template-columns:72px 1fr 210px;gap:clamp(16px,3vw,44px);
+  padding:clamp(24px,3vw,38px) 0;border-top:1px solid var(--rule);align-items:baseline
+}
+.lat:last-of-type{border-bottom:1px solid var(--rule)}
+.lat .n{font-family:var(--disp);font-weight:300;font-size:11px;letter-spacing:.34em;color:var(--mute)}
+.lat p{color:var(--body);font-size:14px;line-height:1.85;margin-top:12px;max-width:52ch}
+.lat .meta{
+  font-family:var(--disp);font-weight:300;font-size:10px;letter-spacing:.36em;
+  text-transform:uppercase;color:var(--mute);text-align:right
+}
+.lat:hover .meta{color:var(--bone)}
+/* the bruise - one hairline that does not close */
+.lat.bruise{border-top:none;position:relative}
+.lat.bruise::before{content:"";position:absolute;top:0;left:0;right:118px;border-top:1px solid var(--rule)}
+@media(max-width:820px){
+  .lat{grid-template-columns:56px 1fr}
+  .lat .meta{grid-column:2;text-align:left;margin-top:16px}
+  .lat.bruise::before{right:64px}
+}
+
+/* ---------- PROGRAMMES ---------- */
+.prog{border-top:1px solid var(--rule);padding:clamp(22px,3vw,34px) 0;display:grid;grid-template-columns:1fr;gap:8px}
+.prog:last-of-type{border-bottom:1px solid var(--rule)}
+.prog .id{
+  font-family:var(--disp);font-weight:400;font-size:clamp(13px,1.5vw,17px);
+  letter-spacing:.16em;text-transform:uppercase;color:var(--bone)
+}
+.prog .d{color:var(--body);font-size:14px}
+.say{max-width:44ch;color:var(--body);font-size:15px;line-height:1.95}
+.say + .say{margin-top:14px}
+.corr{
+  font-family:var(--disp);font-weight:300;font-size:11px;letter-spacing:.34em;
+  text-transform:uppercase;color:var(--mute);margin-top:clamp(28px,4vw,44px)
+}
+
+/* ---------- THE GESTURE ---------- */
+.inv{
+  background:var(--bone);color:var(--ink);
+  border-top:0;
+  padding:clamp(96px,14vw,220px) 0
+}
+.inv .eyebrow,.inv .numeral{color:var(--imute)}
+.inv .pull{
+  font-family:var(--disp);font-weight:200;
+  font-size:clamp(34px,7.6vw,104px);line-height:.98;letter-spacing:.04em;
+  text-transform:uppercase;color:var(--ink);max-width:16ch
+}
+.inv .cta{color:var(--ink);border-bottom-color:var(--irule)}
+.inv .cta:hover{border-bottom-color:var(--ink)}
+.inv .head{margin-bottom:clamp(34px,5vw,64px)}
+
+/* ---------- COLOPHON ---------- */
+footer{border-top:1px solid var(--rule);padding:clamp(56px,8vw,110px) 0 clamp(48px,6vw,90px)}
+.fline{
+  display:flex;gap:clamp(20px,3.6vw,52px);flex-wrap:wrap;align-items:baseline;
+  font-family:var(--disp);font-weight:300;font-size:11px;letter-spacing:.36em;
+  text-transform:uppercase;color:var(--mute)
+}
+.fline a:hover{color:var(--bone)}
+.legal{
+  font-family:var(--disp);font-weight:300;margin-top:clamp(34px,5vw,60px);
+  font-size:10px;letter-spacing:.34em;text-transform:uppercase;color:var(--mute)
+}
+
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .house nav a::after{transition:none}
+  h1 .mt-l{transform:none !important}
+}
+</style>
+</head>
+<body>
+
+<a class="skip" href="#main">SKIP TO THE COLLECTION</a>
+
+<div class="wrap">
+<header class="house">
+<a class="mark" href="/">
+<span class="mark-a">WITCHCRAFT AI</span>
+<span class="mark-b">WITCH.CODES</span>
+</a>
+<nav aria-label="Sections">
+<a href="#agents">AGENTS</a>
+<a href="#start">QUICKSTART</a>
+<a href="#latency">LATENCY</a>
+<a href="#keys">KEYS</a>
+<a href="https://witchcraft.business">WITCHCRAFT.BUSINESS &#8599;</a>
+</nav>
+</header>
+</div>
+
+<main id="main" tabindex="-1">
+
+<div class="wrap">
+<section class="open" id="top">
+<div class="opengrid">
+<p class="eyebrow">THE API PORTAL &nbsp;&#183;&nbsp; WITCHCRAFT AI</p>
+<h1 id="title" aria-label="THE PANTHEON, AS ENDPOINTS."><span class="tline">THE PANTHEON,</span><span class="tline">AS ENDPOINTS.</span></h1>
+<p class="promise">ten goddesses. one key.</p>
+<p class="lede">Every agent in the network, addressable. The receptionist that answers your line, the memory that never sleeps, the valuer that argues with the market. Each one a subdomain, each one a voice.</p>
+<p><a class="cta" href="mailto:hecate@witch.codes">A KEY &#8594;</a></p>
+</div>
+
+<figure class="plate" data-prompt="Minimal high-tech front desk in an empty dark lobby, a single telephone handset on the counter, pendant light above, black and white, direct flash, hard shadow, film grain, editorial interior photography"><svg viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M60 300 L540 300"/><path d="M100 300 L140 220 L460 220 L500 300"/><path d="M140 220 L140 300 M460 220 L460 300"/><rect x="270" y="196" width="60" height="12"/><path d="M300 60 L300 130"/><path d="M276 154 A24 24 0 0 1 324 154"/><path d="M60 340 L540 340" stroke-dasharray="1 7"/></svg><figcaption>PLATE 01 &#183; THE RECEPTION, STAFFED BY NO ONE</figcaption></figure>
+</section>
+
+<section id="agents">
+<div class="head">
+<p class="numeral">I</p>
+<div>
+<p class="eyebrow">THE AGENTS</p>
+<h2>Each one clears a threshold the last could not.</h2>
+</div>
+</div>
+<table>
+<thead><tr><th>ENDPOINT</th><th>ROLE</th><th>STATE</th></tr></thead>
+<tbody>
+<tr><td class="m">hera.witch.codes</td><td class="r">Ambient memory. Consented capture, spoken recall in real time.</td><td class="s">LIVE</td></tr>
+<tr><td class="m">thalia.witch.codes</td><td class="r">Personal agent. Outbound action and planning for one principal.</td><td class="s">IN BUILD</td></tr>
+<tr><td class="m">artemis.witch.codes</td><td class="r">The voice receptionist. Answers, qualifies, closes on a live line.</td><td class="s">LAUNCHING</td></tr>
+<tr><td class="m">aphrodite.witch.codes</td><td class="r">People and wellbeing. Work that requires being trusted.</td><td class="s">DESIGN</td></tr>
+<tr><td class="m">persephone.witch.codes</td><td class="r">Executive. Long-horizon planning and risk.</td><td class="s">DESIGN</td></tr>
+<tr><td class="m">athena.witch.codes</td><td class="r">AGI programme. Judgement, held to a return.</td><td class="s">RESEARCH</td></tr>
+<tr><td class="m">hecate.witch.codes</td><td class="r">Simulated consciousness. The terminal programme.</td><td class="s">RESEARCH</td></tr>
+<tr><td class="m">hestia.witch.codes</td><td class="r">Valuation. Open-ended modelling under uncertainty.</td><td class="s">DEPLOYED</td></tr>
+<tr><td class="m">nyx.witch.codes</td><td class="r">Computational humour.</td><td class="s">DEPLOYED</td></tr>
+<tr><td class="m">nadia.witch.codes</td><td class="r">Companionship. Human escalation built in.</td><td class="s">WAITLIST</td></tr>
+</tbody>
+</table>
+</section>
+
+<section id="start">
+<div class="head">
+<p class="numeral">II</p>
+<div>
+<p class="eyebrow">QUICKSTART</p>
+<h2>One call. The surface below is illustrative until keys ship.</h2>
+</div>
+</div>
+<pre class="spec" id="curl">curl https://api.witch.codes/v1/artemis/answer \
+  -H "Authorization: Bearer $WITCH_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{"line":"+61XXXXXXXXX","greeting":"the black garter, good evening"}'</pre>
+</section>
+
+<section id="latency">
+<div class="head">
+<p class="numeral">III</p>
+<div>
+<p class="eyebrow">THE LATENCY BUDGET</p>
+<h2>A conversation breathes at 200 milliseconds. The stack is built to keep up.</h2>
+</div>
+</div>
+<div class="lat"><span class="n">01</span><div><h3>CAPTURE</h3><p>Client-side neural voice activity detection. Silence is decided at the edge, not in the cloud.</p></div><span class="meta">EDGE &#8594;</span></div>
+<div class="lat"><span class="n">02</span><div><h3>TRANSCRIPTION</h3><p>Streaming speech-to-text with partial transcripts, not batch jobs.</p></div><span class="meta">STREAM &#8594;</span></div>
+<div class="lat"><span class="n">03</span><div><h3>REASONING</h3><p>First token before the caller notices the pause.</p></div><span class="meta">FIRST TOKEN &#8594;</span></div>
+<div class="lat bruise"><span class="n">04</span><div><h3>VOICE</h3><p>Streaming synthesis, sub-250ms to first audio. Interruptions honoured mid-sentence.</p></div><span class="meta">FIRST AUDIO &#8594;</span></div>
+</section>
+
+<section id="papers">
+<div class="head">
+<p class="numeral">IV</p>
+<div>
+<p class="eyebrow">PAPERS</p>
+<h2>Nothing is claimed here that has not been written down.</h2>
+</div>
+</div>
+<p class="say">No papers are published at this address.</p>
+<p class="say">Two programmes are open and unpublished:</p>
+<div class="prog" style="margin-top:clamp(28px,4vw,44px)"><span class="id">athena.witch.codes</span><span class="d">AGI programme. Judgement, held to a return.</span></div>
+<div class="prog"><span class="id">hecate.witch.codes</span><span class="d">Simulated consciousness. The terminal programme.</span></div>
+<p class="corr">Correspondence: hecate@witch.codes</p>
+</section>
+</div>
+
+<section class="inv" id="keys">
+<div class="wrap">
+<div class="head">
+<p class="numeral">V</p>
+<div><p class="eyebrow">KEYS</p></div>
+</div>
+<p class="pull">Keys are issued by correspondence, not by form.</p>
+<p><a class="cta" href="mailto:hecate@witch.codes">A KEY &#8594;</a></p>
+</div>
+</section>
+
+<div class="wrap">
+<footer id="contact">
+<div class="fline">
+<a href="mailto:hecate@witch.codes">HECATE@WITCH.CODES</a>
+<a href="https://witchcraft.business">WITCHCRAFT.BUSINESS</a>
+<span>SYDNEY &#183; MELBOURNE</span>
+<span>BY APPOINTMENT</span>
+</div>
+<p class="legal">&#169; WITCHCRAFT AI &#183; WITCHCRAFT AI &#183; MMXXVI - TWO LINES, ONE ARCHITECTURE</p>
+<div class="cisfoot" style="margin:56px 0 0;padding:22px 0 10px;border-top:1px solid rgba(10,10,10,.25);font-family:Helvetica,Arial,sans-serif;font-size:10px;letter-spacing:.14em;line-height:2.1;color:rgba(10,10,10,.72);text-transform:uppercase;"><a href="https://witch.codes" style="display:block;margin:0 0 16px;"><img src="/assets/foot-art.jpg" alt="WITCH.CODES" style="width:100%;max-width:220px;height:auto;display:block;border:1px solid rgba(10,10,10,.22);"></a><a href="https://witch.codes" style="display:block;margin:0 0 16px;"><img src="/assets/foot-art.jpg" alt="WITCH.CODES" style="width:100%;max-width:220px;height:auto;display:block;border:1px solid rgba(10,10,10,.22);"></a>BUTTERFLY KINGDOM NSW PTY LTD TRADING AS WITCHCRAFT AI &middot; ABN 11 691 050 969 &middot; ACN 691 050 969 &middot; G/17 THE SEVEN WAYS ROCKDALE NSW 2216<br><a href="https://witch.codes" style="color:inherit;">WITCH.CODES</a> &middot; <a href="https://witchcraft.business" style="color:inherit;">WITCHCRAFT.BUSINESS</a> &middot; <a href="https://witchcraft.living" style="color:inherit;">WITCHCRAFT.LIVING</a> &middot; <a href="https://witchcraft.homes" style="color:inherit;">WITCHCRAFT.HOMES</a> &middot; <a href="https://witchcraft.expert" style="color:inherit;">WITCHCRAFT.EXPERT</a> &middot; <a href="https://witchcraft.boutique" style="color:inherit;">WITCHCRAFT.BOUTIQUE</a> &middot; <a href="https://witchcraft.delivery" style="color:inherit;">WITCHCRAFT.DELIVERY</a> &middot; <a href="https://witchcraft.pics" style="color:inherit;">WITCHCRAFT.PICS</a> &middot; <a href="https://witchcraft.video" style="color:inherit;">WITCHCRAFT.VIDEO</a><br><a href="mailto:hecate@witch.codes" style="color:inherit;">HECATE@WITCH.CODES</a></div>
+</footer>
+</div>
+
+</main>
+
+<script>
+(function(){
+"use strict";
+
+var RM = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+var h1 = document.getElementById('title');
+if(!h1 || RM){ return; }
+
+/* ---- split the title into letters. the wordmark is cut, not typed. ---- */
+var lines = [].slice.call(h1.querySelectorAll('.tline'));
+var letters = [];
+
+for(var li = 0; li < lines.length; li++){
+  var el = lines[li];
+  var src = el.textContent;
+  el.textContent = '';
+  var row = [];
+  for(var ci = 0; ci < src.length; ci++){
+    var s = document.createElement('span');
+    s.className = 'mt-l';
+    s.textContent = (src.charAt(ci) === ' ') ? ' ' : src.charAt(ci);
+    el.appendChild(s);
+    row.push(s);
+  }
+  var centre = (row.length - 1) / 2;
+  for(var k = 0; k < row.length; k++){
+    letters.push({ n:row[k], off:(k - centre), seed:Math.sin(k * 1.7 + li * 0.9) });
+  }
+}
+
+/* ---- one rAF. transform only. ---- */
+var PERIOD = 9000;           /* ms for a full open-and-close */
+var spread = 10;             /* px, recomputed from the cut of the type */
+var lift   = 7;              /* px */
+var raf = 0, t0 = 0, acc = 0, running = false;
+
+function measure(){
+  var fs = parseFloat(window.getComputedStyle(h1).fontSize) || 60;
+  spread = fs * 0.055;
+  lift   = Math.min(9, fs * 0.05);
+}
+measure();
+
+function paint(t){
+  var env = 0.5 + 0.5 * Math.cos(2 * Math.PI * t / PERIOD);   /* 1 at t=0, closes to 0 */
+  var e2 = env * env;                                          /* ease the seam shut */
+  for(var i = 0; i < letters.length; i++){
+    var L = letters[i];
+    var dx = -L.off * spread * e2;
+    var dy = L.seed * lift * e2;
+    L.n.style.transform = 'translate3d(' + dx.toFixed(2) + 'px,' + dy.toFixed(2) + 'px,0)';
+  }
+}
+
+function tick(ts){
+  var t = acc + (ts - t0);
+  paint(t);
+  raf = window.requestAnimationFrame(tick);
+}
+
+function start(){
+  if(running){ return; }
+  running = true;
+  t0 = (window.performance && performance.now) ? performance.now() : Date.now();
+  raf = window.requestAnimationFrame(tick);
+}
+
+function stop(){
+  if(!running){ return; }
+  var now = (window.performance && performance.now) ? performance.now() : Date.now();
+  acc += (now - t0);
+  running = false;
+  if(raf){ window.cancelAnimationFrame(raf); raf = 0; }
+}
+
+var onScreen = true;
+
+document.addEventListener('visibilitychange', function(){
+  if(document.hidden){ stop(); } else if(onScreen){ start(); }
+});
+
+if(window.IntersectionObserver){
+  new IntersectionObserver(function(entries){
+    onScreen = entries[0].isIntersecting;
+    if(onScreen && !document.hidden){ start(); } else { stop(); }
+  }, { threshold:0 }).observe(h1);
+}
+
+window.addEventListener('resize', function(){ measure(); });
+
+paint(0);
+start();
+
+})();
+</script>
+</body>
+</html>
